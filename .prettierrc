@@ -1,0 +1,19 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "jsxSingleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ],
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 90,
+  "endOfLine": "lf"
+}
+

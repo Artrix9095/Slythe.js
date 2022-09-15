@@ -1,0 +1,14 @@
+{
+  "name": "@slythe/cli",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Artrix <39530102+Artrix9095@users.noreply.github.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

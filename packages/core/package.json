@@ -1,0 +1,20 @@
+{
+  "name": "@slythe/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Artrix <39530102+Artrix9095@users.noreply.github.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "discord-api-types": "^0.37.10",
+    "node-fetch": "^3.2.10",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.3"
+  }
+}
