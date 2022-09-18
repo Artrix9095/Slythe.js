@@ -2,7 +2,6 @@
   "name": "slythe.js",
   "version": "0.0.0",
   "description": "Base path for slythe",
-  "private": true,
   "packageManager": "pnpm@7.11.0",
   "scripts": {
     "dev": "lerna run dev --stream --parallel",
