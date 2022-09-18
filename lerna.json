@@ -1,9 +1,7 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "npmClient": "pnpm",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "useWorkspaces": true,
   "command": {
     "version": {
@@ -11,12 +9,9 @@
     },
     "publish": {
       "npmClient": "npm",
-      "allowBranch": [
-        "main",
-        "canary"
-      ],
+      "allowBranch": ["main", "canary"],
       "registry": "https://registry.npmjs.org/"
     }
   },
-  "version": "1.0.0-alpha.0"
+  "version": "0.0.0"
 }
