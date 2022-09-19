@@ -1,14 +1,35 @@
 {
-  "name": "@slythe/cli",
+  "name": "@slythejs/cli",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Artrix <39530102+Artrix9095@users.noreply.github.com>",
   "homepage": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "slythe": "dist/index.js"
+  },
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@swc/core": "1.3.1",
+    "chalk": "^5.0.1",
+    "chalk-animation": "^2.0.3",
+    "commander": "^9.4.0",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.1.2",
+    "nanospinner": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@slythejs/core": "0.0.0"
+  },
+  "devDependencies": {
+    "@types/chalk-animation": "^1.6.1",
+    "@types/figlet": "^1.5.5",
+    "@types/inquirer": "^9.0.1"
+  }
 }
