@@ -8,6 +8,7 @@
     "dev": "lerna run dev --stream --parallel",
     "lerna": "lerna",
     "test": "turbo run test",
+    "lint": "turbo run lint",
     "build": "turbo run build",
     "prepublish": "lerna run prepublish",
     "publish-canary": "lerna version prerelease --preid canary --force-publish",

@@ -1,13 +1,9 @@
-import EventEmitter from 'events';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import TypedEventEmitter from './EventEmitter';
 import * as DAPI from 'discord-api-types/v10';
 import { WebSocket } from 'ws';
 import {
     GatewayDispatchEvents,
-    GatewayDispatchPayload,
-    GatewayHello,
-    GatewayHelloData,
-    GatewayCloseCodes,
     GatewayIdentifyData,
     GatewayIntentBits,
     GatewayOpcodes,
@@ -23,7 +19,7 @@ export default class GatewayHandler
 {
     isReady = false;
     protected ws?: WebSocket;
-    private heartBeatIntervalId: any | null = null;
+    private heartBeatIntervalId: NodeJS.Timer | null = null;
     constructor(
         public intents: (keyof typeof GatewayIntentBits)[],
         protected token?: string
@@ -67,6 +63,7 @@ export default class GatewayHandler
     }
     protected handleMessage(data: {
         op: GatewayOpcodes;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         d: any;
         t: GatewayDispatchEvents;
         s: number;
@@ -114,7 +111,7 @@ export default class GatewayHandler
 
     disconnect() {
         this.isReady = false;
-        clearInterval(this.heartBeatIntervalId);
+        clearInterval(this.heartBeatIntervalId!);
         this.ws?.close();
     }
 }

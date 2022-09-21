@@ -2,6 +2,7 @@
 import { EventEmitter as BaseEventEmitter } from 'events';
 
 interface StringKeyedObject {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 }
 
