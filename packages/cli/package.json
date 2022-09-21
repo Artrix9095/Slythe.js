@@ -22,7 +22,8 @@
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.2",
     "inquirer": "^9.1.2",
-    "nanospinner": "^1.1.0"
+    "nanospinner": "^1.1.0",
+    "systeminformation": "5.12.6"
   },
   "peerDependencies": {
     "@slythejs/core": "0.0.0"

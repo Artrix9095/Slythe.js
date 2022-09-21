@@ -6,6 +6,9 @@ import chalk from 'chalk';
 import init from './commands/init.js';
 //@ts-ignore
 import packageJSON from '../package.json' assert { type: 'json' };
+import info from './commands/info.js';
+import { fileURLToPath } from 'url';
+import path from 'path';
 // const LIB_DIR = path.join(__dirname, '../');
 
 // try {
@@ -24,12 +27,18 @@ import packageJSON from '../package.json' assert { type: 'json' };
 //           })();
 // }
 
+global.__filename = fileURLToPath(import.meta.url);
+
+// 👇️ "/home/john/Desktop/javascript"
+global.__dirname = path.dirname(__filename);
+
 program
     .name('slythejs')
     .description('CLI full of utilities for slythejs')
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     .version(packageJSON.version)
     .addCommand(start)
-    .addCommand(init);
+    .addCommand(init)
+    .addCommand(info);
 
 program.parse();

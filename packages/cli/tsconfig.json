@@ -8,7 +8,7 @@
     "rootDir": "./src",
     "lib": ["es2020"],
     "target": "ES2022",
-    "module": "Es2022",
+    "module": "ES2022",
     "resolveJsonModule": true,
     "moduleResolution": "NodeNext"
   }
