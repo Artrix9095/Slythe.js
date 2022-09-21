@@ -6,7 +6,12 @@ export interface ClientConfig {
 }
 
 export class Client extends GatewayHandler {
+    public bot: DAPI.APIUser | null = null;
     constructor(intents: (keyof typeof DAPI.GatewayIntentBits)[]) {
         super(intents);
+    }
+    protected override _onReady({ d: data }: DAPI.GatewayReadyDispatch) {
+        this.isReady = true;
+        this.bot = data.user;
     }
 }
