@@ -1,5 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+
   "pipeline": {
     "build": {
       // A package's `build` script depends on that package's
@@ -18,7 +19,7 @@
       "outputs": [],
       // A package's `test` script should only be rerun when
       // either a `.tsx` or `.ts` file has changed in `src` or `test` folders.
-      "inputs": ["src/**/*.ts", "test/**/*.ts"]
+      "inputs": ["src/**/*.ts", "tests/**/*.ts"]
     },
     "lint": {
       // A package's `lint` script has no dependencies and

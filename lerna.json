@@ -14,7 +14,7 @@
       "allowBranch": [
         "main",
         "canary"
-      ],
+      ],  
       "registry": "https://registry.npmjs.org/"
     }
   },
