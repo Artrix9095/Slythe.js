@@ -12,7 +12,6 @@ describe('Bot tests', () => {
         expect(isReady).toBeTruthy();
     });
     afterAll(done => {
-        client.disconnect();
-        done();
+        client.kill().then(() => done());
     });
 });

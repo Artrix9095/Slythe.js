@@ -166,7 +166,10 @@ export default class GatewayHandler
             this.ws?.on('message', d => this.handleMessage(JSON.parse(d.toString())));
         });
     }
-
+    /**
+     * Disconnects the bot from discord
+     * NOTE: this is probably not wat you're looking for, use client.kill()
+     */
     disconnect() {
         this.isReady = false;
         clearInterval(this.heartBeatIntervalId!);
