@@ -271,7 +271,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         this.ws = new WebSocket(gatewayUrl + `?v=${DAPI.GatewayVersion}&encoding=json`);
 
         this.ws.on('error', (code?: GatewayCloseCodes, reason?: Buffer) => {
-            if (!code) {
+            if (!code && this.isReady) {
                 this.logger.error('Sudden Disconnect from discord... Reconnecting');
                 this.disconnect();
                 this.connect();
@@ -280,7 +280,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
                     throw new Error('Invalid token');
                 } else {
                     reason && this.logger.warn(reason.toString());
-                    this.logger.warn('Discord disconnected with the error code: ' + code);
+                    this.logger.error('Discord disconnected with the error\n' + code);
                     this.disconnect();
                     this.connect();
                 }

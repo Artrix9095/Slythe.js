@@ -6,22 +6,20 @@ describe('Bot tests', () => {
         intents: ['Guilds'],
         publicKey: process.env.TEST_BOT_PUBLIC_KEY,
     });
-    test('Bot can login', async () => {
-        const isReady = await new Promise(res => client.on('Ready', () => res(true)));
-
-        expect(isReady).toBeTruthy();
-    });
-    test('Bot Can Receive Guilds', async () => {
-        const guild = await new Promise(res => client.on('GuildCreate', res));
-
-        expect(guild).toBeTruthy();
-    });
 
     client.connect(process.env.TEST_BOT_TOKEN);
 
+    const isReady = new Promise(res => client.on('Ready', () => res(true)));
+    const guild = new Promise(res => client.on('GuildCreate', res));
+
+    test('Bot can login', () => {
+        expect(isReady).resolves.toBeTruthy();
+    });
+    test('Bot Can Receive Guilds', () => {
+        expect(guild).resolves.toBeTruthy();
+    });
+
     afterAll(done => {
-        client.kill().then(() => done()) as any;
+        client.kill().then(() => done());
     });
 });
-
-jest.setTimeout(10000);
