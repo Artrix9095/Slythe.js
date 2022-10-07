@@ -23,3 +23,5 @@ describe('Bot tests', () => {
         client.kill().then(() => done()) as any;
     });
 });
+
+jest.setTimeout(10000);
