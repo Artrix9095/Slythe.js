@@ -1,25 +1,155 @@
+/**
+ * @internal
+ */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import TypedEventEmitter from './EventEmitter';
 import * as DAPI from 'discord-api-types/v10';
 import { WebSocket } from 'ws';
 import {
+    GatewayChannelCreateDispatch,
+    GatewayChannelDeleteDispatch,
+    GatewayChannelPinsUpdateDispatch,
+    GatewayChannelUpdateDispatch,
     GatewayCloseCodes,
-    GatewayDispatchEvents,
+    GatewayDispatchEvents as Dispatch,
+    GatewayDispatchPayload,
+    GatewayGuildBanAddDispatch,
+    GatewayGuildBanRemoveDispatch,
+    GatewayGuildCreateDispatch,
+    GatewayGuildDeleteDispatch,
+    GatewayGuildEmojisUpdateDispatch,
+    GatewayGuildIntegrationsUpdateDispatch,
+    GatewayGuildMemberAddDispatch,
+    GatewayGuildMemberRemoveDispatch,
+    GatewayGuildMembersChunkDispatch,
+    GatewayGuildMemberUpdateDispatch,
+    GatewayGuildRoleCreateDispatch,
+    GatewayGuildRoleDeleteDispatch,
+    GatewayGuildRoleUpdateDispatch,
+    GatewayGuildScheduledEventCreateDispatch,
+    GatewayGuildScheduledEventDeleteDispatch,
+    GatewayGuildScheduledEventUpdateDispatch,
+    GatewayGuildScheduledEventUserAddDispatch,
+    GatewayGuildScheduledEventUserRemoveDispatch,
+    GatewayGuildStickersUpdateDispatch,
+    GatewayGuildUpdateDispatch,
     GatewayIdentifyData,
+    GatewayIntegrationCreateDispatch,
+    GatewayIntegrationDeleteDispatch,
+    GatewayIntegrationUpdateDispatch,
     GatewayIntentBits,
+    GatewayInteractionCreateDispatch,
+    GatewayInviteCreateDispatch,
+    GatewayInviteDeleteDispatch,
+    GatewayMessageCreateDispatch,
+    GatewayMessageDeleteBulkDispatch,
+    GatewayMessageDeleteDispatch,
+    GatewayMessageReactionAddDispatch,
+    GatewayMessageReactionRemoveAllDispatch,
+    GatewayMessageReactionRemoveDispatch,
+    GatewayMessageReactionRemoveEmojiDispatch,
+    GatewayMessageUpdateDispatch,
     GatewayOpcodes,
+    GatewayPresenceUpdateData,
     GatewayReadyDispatch,
     GatewayReadyDispatchData,
+    GatewayResumedDispatch,
+    GatewayStageInstanceCreateDispatch,
+    GatewayStageInstanceDeleteDispatch,
+    GatewayStageInstanceUpdateDispatch,
+    GatewayThreadCreateDispatch,
+    GatewayThreadDeleteDispatch,
+    GatewayThreadListSyncDispatch,
+    GatewayThreadMembersUpdateDispatch,
+    GatewayThreadMemberUpdateDispatch,
+    GatewayThreadUpdateDispatch,
+    GatewayTypingStartDispatch,
+    GatewayUserUpdateDispatch,
+    GatewayVoiceServerUpdateDispatch,
+    GatewayVoiceStateUpdate,
+    GatewayWebhooksUpdateDispatch,
 } from 'discord-api-types/gateway/v10';
 import { joinIntents } from '../../util/gateway';
 import { EventEmitterWithLogger } from './Logger';
+import { Camelize, snakeToPascal } from '../../util/string';
 
-export default class GatewayHandler
-    extends EventEmitterWithLogger
+type GatewayDispatchEventsBinder = {
+    // Channels
+    [Dispatch.ChannelCreate]: GatewayChannelCreateDispatch;
+    [Dispatch.ChannelUpdate]: GatewayChannelUpdateDispatch;
+    [Dispatch.ChannelDelete]: GatewayChannelDeleteDispatch;
+    [Dispatch.ChannelPinsUpdate]: GatewayChannelPinsUpdateDispatch;
+    // Guild CRUD
+    [Dispatch.GuildCreate]: GatewayGuildCreateDispatch;
+    [Dispatch.GuildDelete]: GatewayGuildDeleteDispatch;
+    [Dispatch.GuildUpdate]: GatewayGuildUpdateDispatch;
+    [Dispatch.GuildEmojisUpdate]: GatewayGuildEmojisUpdateDispatch;
+    [Dispatch.GuildMemberAdd]: GatewayGuildMemberAddDispatch;
+    [Dispatch.GuildMemberRemove]: GatewayGuildMemberRemoveDispatch;
+    [Dispatch.GuildMemberUpdate]: GatewayGuildMemberUpdateDispatch;
+    [Dispatch.GuildMembersChunk]: GatewayGuildMembersChunkDispatch;
+    [Dispatch.GuildBanAdd]: GatewayGuildBanAddDispatch;
+    [Dispatch.GuildBanRemove]: GatewayGuildBanRemoveDispatch;
+    [Dispatch.GuildIntegrationsUpdate]: GatewayGuildIntegrationsUpdateDispatch;
+    [Dispatch.GuildRoleCreate]: GatewayGuildRoleCreateDispatch;
+    [Dispatch.GuildRoleDelete]: GatewayGuildRoleDeleteDispatch;
+    [Dispatch.GuildRoleUpdate]: GatewayGuildRoleUpdateDispatch;
+    [Dispatch.GuildScheduledEventCreate]: GatewayGuildScheduledEventCreateDispatch;
+    [Dispatch.GuildScheduledEventUpdate]: GatewayGuildScheduledEventUpdateDispatch;
+    [Dispatch.GuildScheduledEventDelete]: GatewayGuildScheduledEventDeleteDispatch;
+    [Dispatch.GuildScheduledEventUserAdd]: GatewayGuildScheduledEventUserAddDispatch;
+    [Dispatch.GuildScheduledEventUserRemove]: GatewayGuildScheduledEventUserRemoveDispatch;
+    [Dispatch.GuildStickersUpdate]: GatewayGuildStickersUpdateDispatch;
+    // Integrations and Interactions
+    [Dispatch.IntegrationCreate]: GatewayIntegrationCreateDispatch;
+    [Dispatch.IntegrationUpdate]: GatewayIntegrationUpdateDispatch;
+    [Dispatch.IntegrationDelete]: GatewayIntegrationDeleteDispatch;
+    [Dispatch.ApplicationCommandPermissionsUpdate]: any;
+    [Dispatch.InteractionCreate]: GatewayInteractionCreateDispatch;
+    // Invites
+    [Dispatch.InviteCreate]: GatewayInviteCreateDispatch;
+    [Dispatch.InviteDelete]: GatewayInviteDeleteDispatch;
+    // Messages
+    [Dispatch.MessageCreate]: GatewayMessageCreateDispatch;
+    [Dispatch.MessageUpdate]: GatewayMessageUpdateDispatch;
+    [Dispatch.MessageDelete]: GatewayMessageDeleteDispatch;
+    [Dispatch.MessageDeleteBulk]: GatewayMessageDeleteBulkDispatch;
+    [Dispatch.MessageReactionAdd]: GatewayMessageReactionAddDispatch;
+    [Dispatch.MessageReactionRemove]: GatewayMessageReactionRemoveDispatch;
+    [Dispatch.MessageReactionRemoveAll]: GatewayMessageReactionRemoveAllDispatch;
+    [Dispatch.MessageReactionRemoveEmoji]: GatewayMessageReactionRemoveEmojiDispatch;
+    // Bot stuff
+    [Dispatch.PresenceUpdate]: GatewayPresenceUpdateData;
+    [Dispatch.Ready]: GatewayReadyDispatch;
+    [Dispatch.Resumed]: GatewayResumedDispatch;
+    // Stage
+    [Dispatch.StageInstanceCreate]: GatewayStageInstanceCreateDispatch;
+    [Dispatch.StageInstanceUpdate]: GatewayStageInstanceUpdateDispatch;
+    [Dispatch.StageInstanceDelete]: GatewayStageInstanceDeleteDispatch;
+    // Thread
+    [Dispatch.ThreadCreate]: GatewayThreadCreateDispatch;
+    [Dispatch.ThreadDelete]: GatewayThreadDeleteDispatch;
+    [Dispatch.ThreadUpdate]: GatewayThreadUpdateDispatch;
+    [Dispatch.ThreadListSync]: GatewayThreadListSyncDispatch;
+    [Dispatch.ThreadMemberUpdate]: GatewayThreadMemberUpdateDispatch;
+    [Dispatch.ThreadMembersUpdate]: GatewayThreadMembersUpdateDispatch;
+    [Dispatch.ThreadUpdate]: GatewayThreadUpdateDispatch;
+    [Dispatch.TypingStart]: GatewayTypingStartDispatch;
+    [Dispatch.UserUpdate]: GatewayUserUpdateDispatch;
+    // Misc
+    [Dispatch.VoiceServerUpdate]: GatewayVoiceServerUpdateDispatch;
+    [Dispatch.VoiceStateUpdate]: GatewayVoiceStateUpdate;
+    [Dispatch.WebhooksUpdate]: GatewayWebhooksUpdateDispatch;
+};
 
-    //TODO: Add intellisense to listeners
-    implements TypedEventEmitter<any>
-{
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
+export default class GatewayHandler extends EventEmitterWithLogger<
+    {
+        [K in keyof typeof Dispatch]: [
+            GatewayDispatchEventsBinder[typeof Dispatch[K]]['d']
+        ];
+    } & { rawMSG: [GatewayDispatchPayload] }
+> {
     public isReady = false;
     public session: { seq?: number; id?: string; reconnectUrl?: string } = {};
     protected ws?: WebSocket;
@@ -35,7 +165,7 @@ export default class GatewayHandler
         this._sendOp(GatewayOpcodes.HeartbeatAck);
     }
 
-    protected _sendEvent(e: GatewayDispatchEvents, d?: any) {
+    protected _sendEvent(e: Dispatch, d?: any) {
         this.ws?.send(
             JSON.stringify({
                 op: GatewayOpcodes.Dispatch,
@@ -68,18 +198,12 @@ export default class GatewayHandler
             },
         } as GatewayIdentifyData);
     }
-    protected handleMessage(data: {
-        op: GatewayOpcodes;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        d: any;
-        t: GatewayDispatchEvents;
-        s?: number;
-    }) {
+    protected handleMessage(data: GatewayDispatchPayload & { d: any }) {
         // https://discord.com/developers/docs/topics/gateway#resuming
         if (data.s) this.session.seq = data.s;
-        this.emit('rawMSG', data);
+        this.emit('rawMSG', data.d);
         if (data.op !== GatewayOpcodes.Dispatch) {
-            this.logger.info('Recieved Message with OP Code ' + GatewayOpcodes[data.op]); //TODO: fix this
+            this.logger.info('Received Message with OP Code ' + GatewayOpcodes[data.op]); //TODO: fix this
             if (data.op === GatewayOpcodes.Hello) {
                 // https://discord.com/developers/docs/topics/gateway#heartbeat-interval
                 const jitter = Math.random();
@@ -94,7 +218,7 @@ export default class GatewayHandler
                 this.disconnect();
                 this.connect();
             } else if (data.op === GatewayOpcodes.InvalidSession) {
-                this.logger.warn('Recieved Invalid session');
+                this.logger.warn('Received Invalid session');
                 if (data.d) {
                     this.logger.info('Reconnect Requested via Invalid session');
                     this.disconnect();
@@ -108,14 +232,18 @@ export default class GatewayHandler
                 this._heartbeat();
             }
         } else {
-            this.logger.info('Recieved Message with Event ' + data.t);
-            if (data.t === GatewayDispatchEvents.Ready) {
+            this.logger.info('Received Message with Event ' + data.t);
+            if (data.t === Dispatch.Ready) {
                 this.session.id = (data.d as GatewayReadyDispatchData).session_id;
                 this.session.reconnectUrl = (
                     data.d as GatewayReadyDispatchData
                 ).resume_gateway_url;
-                this._onReady(data as any);
-                this.emit('ready');
+
+                this._onReady(data);
+
+                this.emit('Ready', data.d);
+            } else {
+                this.emit(snakeToPascal(data.t), data.d);
             }
         }
     }
@@ -160,15 +288,14 @@ export default class GatewayHandler
         });
 
         this.ws.on('open', () => {
-            if (isReconnecting) {
-                this._reconnect();
-            }
+            if (isReconnecting) this._reconnect();
+
             this.ws?.on('message', d => this.handleMessage(JSON.parse(d.toString())));
         });
     }
     /**
      * Disconnects the bot from discord
-     * NOTE: this is probably not wat you're looking for, use client.kill()
+     * NOTE: this is probably not what you're looking for, use client.kill()
      */
     disconnect() {
         this.isReady = false;

@@ -70,6 +70,7 @@ importers:
       '@types/jest': 29.0.3
       '@types/ws': ^8.5.3
       discord-api-types: latest
+      discord-interactions: 3.2.0
       dotenv: 16.0.2
       fastify: 4.7.0
       node-fetch: ^3.2.10
@@ -79,6 +80,7 @@ importers:
       ws: ^8.8.1
     dependencies:
       discord-api-types: 0.37.12
+      discord-interactions: 3.2.0
       fastify: 4.7.0
       node-fetch: 3.2.10
       pino: 8.6.0
@@ -3274,6 +3276,13 @@ packages:
 
   /discord-api-types/0.37.12:
     resolution: {integrity: sha512-SMBP4V6/A9mE7shBQAiTxNWnQlYTdiKMGvc7G23neayxaTJeFYh5FviJSWUa0BTdXcph1h/jT03Nbyv5XgZkzw==}
+    dev: false
+
+  /discord-interactions/3.2.0:
+    resolution: {integrity: sha512-/J25RpYlokRW+2HmU5C2xo9bcgCWIzCl+MRRLCL/XvD+Hqe2WyQc639vUUKUNi6hdSdWb2kGNZDkMZxDky2dZg==}
+    engines: {node: '>=12'}
+    dependencies:
+      tweetnacl: 1.0.3
     dev: false
 
   /doctrine/3.0.0:
@@ -7061,6 +7070,10 @@ packages:
       turbo-windows-64: 1.4.7
       turbo-windows-arm64: 1.4.7
     dev: true
+
+  /tweetnacl/1.0.3:
+    resolution: {integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==}
+    dev: false
 
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}

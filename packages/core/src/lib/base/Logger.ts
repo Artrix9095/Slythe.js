@@ -1,5 +1,8 @@
-import EventEmitter from 'events';
+/**
+ * @internal
+ */
 import pino from 'pino';
+import TypedEventEmitter from './EventEmitter';
 
 export default class Logger {
     logger = pino({
@@ -12,7 +15,9 @@ export default class Logger {
     });
 }
 
-export class EventEmitterWithLogger extends EventEmitter {
+export class EventEmitterWithLogger<
+    T extends { [key: string]: any[] }
+> extends TypedEventEmitter<T> {
     logger = pino({
         transport: {
             target: 'pino-pretty',
