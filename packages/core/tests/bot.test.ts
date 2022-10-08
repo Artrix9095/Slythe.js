@@ -12,11 +12,11 @@ describe('Bot tests', () => {
     const isReady = new Promise(res => client.on('Ready', () => res(true)));
     const guild = new Promise(res => client.on('GuildCreate', res));
 
-    test('Bot can login', () => {
-        expect(isReady).resolves.toBeTruthy();
+    test('Bot can login', async () => {
+        await expect(isReady).resolves.toBeTruthy();
     });
-    test('Bot Can Receive Guilds', () => {
-        expect(guild).resolves.toBeTruthy();
+    test('Bot Can Receive Guilds', async () => {
+        await expect(guild).resolves.toBeTruthy();
     });
 
     afterAll(done => {
