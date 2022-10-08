@@ -23,6 +23,7 @@ export class Client extends GatewayHandler {
         this.logger.info(
             `Running in a ${IS_PROD ? 'production' : 'development'} environment `
         );
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         this.publicKey = config.publicKey!;
         if (IS_PROD) {
             if (!this.publicKey) {
@@ -46,9 +47,11 @@ export class Client extends GatewayHandler {
             timestamp,
             this.publicKey
         );
+
         const error: any = !isValid ? new Error('Invalid request') : null;
 
         error && (error.statusCode = 400);
+
         done(error);
     }
     protected _handleServer() {
@@ -62,6 +65,7 @@ export class Client extends GatewayHandler {
     protected override _onReady({ d: data }: DAPI.GatewayReadyDispatch) {
         this.isReady = true;
         this.bot = data.user;
+
         this.clientId = data.user.id;
     }
     /**

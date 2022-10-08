@@ -205,8 +205,8 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         if (data.op !== GatewayOpcodes.Dispatch) {
             this.logger.info('Received Message with OP Code ' + GatewayOpcodes[data.op]); //TODO: fix this
             if (data.op === GatewayOpcodes.Hello) {
-                // https://discord.com/developers/docs/topics/gateway#heartbeat-interval
-                const jitter = Math.random();
+                const jitter = Math.random(); // https://discord.com/developers/docs/topics/gateway#heartbeat-interval
+
                 this.heartBeatIntervalId = setInterval(
                     () => this._heartbeat(),
                     data.d.heartbeat_interval * jitter
