@@ -6,6 +6,8 @@ on:
 env:
   TEST_BOT_TOKEN: ${{ secrets.TEST_BOT_TOKEN }}
   TEST_BOT_PUBLIC_KEY: ${{ secrets.TEST_BOT_PUBLIC_KEY }}
+  TEST_BOT_CHANNEL_ID: ${{ secrets.TEST_BOT_CHANNEL_ID }}
+  TEST_BOT_GUILD_ID: ${{ secrets.TEST_BOT_GUILD_ID }}
  
 jobs:
   build:

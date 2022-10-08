@@ -1,7 +1,7 @@
 /**
  * @internal
  */
-import pino from 'pino';
+import pino, { LevelWithSilent } from 'pino';
 import TypedEventEmitter from './EventEmitter';
 
 export default class Logger {
@@ -19,6 +19,7 @@ export class EventEmitterWithLogger<
     T extends { [key: string]: any[] }
 > extends TypedEventEmitter<T> {
     logger = pino({
+        level: this.logLevel,
         transport: {
             target: 'pino-pretty',
             options: {
@@ -26,7 +27,7 @@ export class EventEmitterWithLogger<
             },
         },
     });
-    constructor() {
+    constructor(protected logLevel: LevelWithSilent = 'info') {
         super();
     }
 }

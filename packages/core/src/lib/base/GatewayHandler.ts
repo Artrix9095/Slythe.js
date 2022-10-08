@@ -72,6 +72,7 @@ import {
 import { joinIntents } from '../../util/gateway';
 import { EventEmitterWithLogger } from './Logger';
 import { Camelize, snakeToPascal } from '../../util/string';
+import { LevelWithSilent } from 'pino';
 
 type GatewayDispatchEventsBinder = {
     // Channels
@@ -156,9 +157,11 @@ export default class GatewayHandler extends EventEmitterWithLogger<
     private heartBeatIntervalId: NodeJS.Timer | null = null;
     constructor(
         public intents: (keyof typeof GatewayIntentBits)[],
-        protected token?: string
+        protected token?: string,
+        logLevel?: LevelWithSilent
     ) {
-        super();
+        super(logLevel);
+        global.logger = this.logger;
     }
 
     protected _heartbeat() {
@@ -187,7 +190,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         throw new Error('Implement this');
     }
     protected _identify() {
-        this.logger.info('Sending Identify');
+        this.logger.debug('Sending Identify');
         this._sendOp(GatewayOpcodes.Identify, {
             token: this.token,
             intents: joinIntents(this.intents),
@@ -203,7 +206,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         if (data.s) this.session.seq = data.s;
         this.emit('rawMSG', data.d);
         if (data.op !== GatewayOpcodes.Dispatch) {
-            this.logger.info('Received Message with OP Code ' + GatewayOpcodes[data.op]); //TODO: fix this
+            this.logger.debug('Received Message with OP Code ' + GatewayOpcodes[data.op]); //TODO: fix this
             if (data.op === GatewayOpcodes.Hello) {
                 const jitter = Math.random(); // https://discord.com/developers/docs/topics/gateway#heartbeat-interval
 
@@ -214,13 +217,13 @@ export default class GatewayHandler extends EventEmitterWithLogger<
 
                 this._identify();
             } else if (data.op === GatewayOpcodes.Reconnect) {
-                this.logger.info('Reconnect Requested');
+                this.logger.debug('Reconnect Requested');
                 this.disconnect();
                 this.connect();
             } else if (data.op === GatewayOpcodes.InvalidSession) {
                 this.logger.warn('Received Invalid session');
                 if (data.d) {
-                    this.logger.info('Reconnect Requested via Invalid session');
+                    this.logger.debug('Reconnect Requested via Invalid session');
                     this.disconnect();
                     this.connect();
                 } else {
@@ -232,7 +235,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
                 this._heartbeat();
             }
         } else {
-            this.logger.info('Received Message with Event ' + data.t);
+            this.logger.debug('Received Message with Event ' + data.t);
             if (data.t === Dispatch.Ready) {
                 this.session.id = (data.d as GatewayReadyDispatchData).session_id;
                 this.session.reconnectUrl = (
@@ -269,7 +272,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         global.token = this.token;
 
         const isReconnecting = !!this.session?.id;
-        isReconnecting && this.logger.info('Reconnected with resume in mind...');
+        isReconnecting && this.logger.debug('Reconnected with resume in mind...');
         const gatewayUrl = isReconnecting
             ? this.session.reconnectUrl
             : 'wss://gateway.discord.gg/';

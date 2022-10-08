@@ -2,13 +2,20 @@ import * as DAPI from 'discord-api-types/v10';
 import GatewayHandler from './base/GatewayHandler';
 import { fastify, FastifyReply, FastifyRequest, HookHandlerDoneFunction } from 'fastify';
 import { verifyKey } from 'discord-interactions';
-import { InteractionResponseType, InteractionType } from 'discord-api-types/v10';
+import { InteractionResponseType, InteractionType, Routes } from 'discord-api-types/v10';
+import { GET } from '../util/http';
+import { Channel } from './structures/Channel';
+import { LevelWithSilent } from 'pino';
 
 export interface ClientConfig {
-    token?: string | Buffer;
+    token?: string;
     clientId?: string;
     publicKey?: string;
     intents: (keyof typeof DAPI.GatewayIntentBits)[];
+    /**
+     * @default silent
+     */
+    loggerLevel?: LevelWithSilent;
 }
 
 const IS_PROD = process.env.NODE_ENV === 'production';
@@ -19,7 +26,7 @@ export class Client extends GatewayHandler {
     protected publicKey = '';
     protected clientId = '';
     constructor(config: ClientConfig) {
-        super(config.intents);
+        super(config.intents, config.token, config.loggerLevel);
         this.logger.info(
             `Running in a ${IS_PROD ? 'production' : 'development'} environment `
         );
@@ -67,6 +74,18 @@ export class Client extends GatewayHandler {
         this.bot = data.user;
 
         this.clientId = data.user.id;
+    }
+    /**
+     *
+     * @param id Id of the channel
+     */
+    public getChannel(id: string) {
+        return GET(Routes.channel(id))
+            .then(res => res.json())
+            .then(data => new Channel(data as any).init());
+    }
+    public getGuild(id: string) {
+        return GET(Routes.guild(id)).then(res => res.json());
     }
     /**
      * Kills the bot and host

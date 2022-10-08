@@ -5,6 +5,7 @@ describe('Bot tests', () => {
     const client = new Client({
         intents: ['Guilds'],
         publicKey: process.env.TEST_BOT_PUBLIC_KEY,
+        loggerLevel: process.env.GITHUB_ACTIONS ? 'info' : 'trace',
     });
 
     client.connect(process.env.TEST_BOT_TOKEN);
@@ -17,6 +18,20 @@ describe('Bot tests', () => {
     });
     test('Bot Can Receive Guilds', async () => {
         await expect(guild).resolves.toBeTruthy();
+    });
+
+    test('Bot can send messages', async () => {
+        const channel = await client.getChannel(process.env.TEST_BOT_CHANNEL_ID!);
+
+        const message = channel.send({ content: 'Hello World' });
+
+        await expect(message).resolves.toBeTruthy();
+    });
+
+    test('Bot can get guild', async () => {
+        const guild = await client.getGuild(process.env.TEST_BOT_GUILD_ID!);
+
+        expect(guild).toBeTruthy();
     });
 
     afterAll(done => {
