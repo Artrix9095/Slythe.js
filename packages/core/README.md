@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<h1>Slythe.js</h1>
+<h1><b>Slythe.js</b></h1>
 
 The _better_ way of making discord bots.
 
