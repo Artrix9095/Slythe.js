@@ -263,12 +263,17 @@ export default class GatewayHandler extends EventEmitterWithLogger<
             throw new Error('No Token provided');
         }
         this.token ??= token;
+
+        if (!this.token) throw new Error('Your token is required to run the bot');
+
+        global.token = this.token;
+
         const isReconnecting = !!this.session?.id;
         isReconnecting && this.logger.info('Reconnected with resume in mind...');
         const gatewayUrl = isReconnecting
             ? this.session.reconnectUrl
             : 'wss://gateway.discord.gg/';
-        this.ws = new WebSocket(gatewayUrl + `?v=${DAPI.GatewayVersion}&encoding=json`);
+        this.ws = new WebSocket(gatewayUrl + `?v=${DAPI.GatewayVersion}&encoding=json`); //TODO: support erlpack etc
 
         this.ws.on('error', (code?: GatewayCloseCodes, reason?: Buffer) => {
             if (!code && this.isReady) {
