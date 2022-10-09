@@ -16,6 +16,7 @@ The _better_ way of making discord bots.
     <a aria-label="Version" href="https://www.npmjs.com/package/@slythejs/core">
         <img src="https://img.shields.io/npm/v/@slythejs/core?color=%2300008B&label=latest%20version&style=for-the-badge">
     </a>
+    <br />
     <a aria-label="CI Results" href="https://github.com/Artrix9095/Slythe.js/actions">
         <img src="https://img.shields.io/github/checks-status/Artrix9095/Slythe.js/main?label=test%20status&logo=jest&logoColor=red&style=for-the-badge">
     </a>
