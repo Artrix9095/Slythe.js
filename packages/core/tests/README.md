@@ -5,8 +5,7 @@
 # Slythe Tests
 
 <p align="center">
-<img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/Artrix9095/Slythe.js/main?label=test%20status&logo=jest&logoColor=red&style=for-the-badge">
-</p>
+<img src="https://img.shields.io/github/workflow/status/Artrix9095/Slythe.js/CI?label=test%20status&logo=jest&logoColor=red&style=for-the-badge">
 
 ## Setup
 
