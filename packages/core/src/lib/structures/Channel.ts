@@ -22,6 +22,8 @@ export class Channel extends BaseStructure<Channel, APIChannel> {
 
 export class TextChannel extends Channel {
     send(content: any): any {
-        return POST(Routes.channelMessages(this.id), { body: content });
+        return POST(Routes.channelMessages(this.id), { body: content }).then(res =>
+            res.json()
+        );
     }
 }
