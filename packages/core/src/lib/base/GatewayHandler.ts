@@ -71,7 +71,7 @@ import {
 } from 'discord-api-types/gateway/v10';
 import { joinIntents } from '../../util/gateway';
 import { EventEmitterWithLogger } from './Logger';
-import { Camelize, snakeToPascal } from '../../util/string';
+import { snakeToPascal } from '../../util/string';
 import { LevelWithSilent } from 'pino';
 
 type GatewayDispatchEventsBinder = {
@@ -186,6 +186,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
             })
         );
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     protected _onReady(ready: GatewayReadyDispatch) {
         throw new Error('Implement this');
     }

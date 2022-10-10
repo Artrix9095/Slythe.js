@@ -1,4 +1,4 @@
-import { APIChannel, ChannelType, Routes, TextChannelType } from 'discord-api-types/v10';
+import { APIChannel, Routes } from 'discord-api-types/v10';
 import { POST } from '../../util/http';
 import BaseStructure from './base';
 

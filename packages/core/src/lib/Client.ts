@@ -63,6 +63,7 @@ export class Client extends GatewayHandler {
     }
     protected _handleServer() {
         this.server.post('/', async (req, res) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { type, id, data } = req.body as any;
 
             if (type === InteractionType.Ping)
