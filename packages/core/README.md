@@ -2,6 +2,10 @@
 
 <div align="center">
 
+<img width="128" alt="logo" src="assets/logo3-polygon.svg#gh-light-mode-only">
+
+<img width="128" alt="logo" src="assets/logo2-polygon.svg#gh-dark-mode-only">
+
 <h1><b>Slythe.js</b></h1>
 
 The _better_ way of making discord bots.
