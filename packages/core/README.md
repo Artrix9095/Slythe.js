@@ -1,5 +1,3 @@
-<!-- TODO: add logo -->
-
 <div align="center">
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="assets/logo3-polygon.svg">
@@ -8,7 +6,7 @@
 
 <h1><b>Slythe.js</b></h1>
 
-The _better_ way of making discord bots.
+The _better_ way to make discord bots.
 
 <p>
     <a aria-label="License" href="https://github.com/Artrix9095/Slythe.js/blob/main/LICENSE">
