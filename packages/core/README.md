@@ -2,8 +2,8 @@
 
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/logo3-polygon.svg">
-  <img width="128" alt="logo" src="assets/logo2-polygon.svg">
+  <source media="(prefers-color-scheme: light)" srcset="/assets/logo3-polygon.svg">
+  <img width="128" alt="logo" src="/assets/logo2-polygon.svg">
 </picture>
 
 <h1><b>Slythe.js</b></h1>
