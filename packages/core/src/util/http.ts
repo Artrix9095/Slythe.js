@@ -65,7 +65,6 @@ const responseMiddleware = (data: { url: string; method: string; opts: any }) =>
 };
 
 //TODO: fix DRY code
-//TODO: implement rate limiting control
 
 export const REQUEST = (
     url: string,
