@@ -6,6 +6,8 @@
 import * as DAPI from 'discord-api-types/v10';
 import { WebSocket } from 'ws';
 import {
+    GatewayAutoModerationActionExecutionDispatch,
+    GatewayAutoModerationRuleCreateDispatch,
     GatewayChannelCreateDispatch,
     GatewayChannelDeleteDispatch,
     GatewayChannelPinsUpdateDispatch,
@@ -68,6 +70,8 @@ import {
     GatewayVoiceServerUpdateDispatch,
     GatewayVoiceStateUpdate,
     GatewayWebhooksUpdateDispatch,
+    GatewayAutoModerationRuleDeleteDispatch,
+    GatewayAutoModerationRuleUpdateDispatch,
 } from 'discord-api-types/gateway/v10';
 import { joinIntents } from '../../util/gateway';
 import { EventEmitterWithLogger } from './Logger';
@@ -141,6 +145,10 @@ type GatewayDispatchEventsBinder = {
     [Dispatch.VoiceServerUpdate]: GatewayVoiceServerUpdateDispatch;
     [Dispatch.VoiceStateUpdate]: GatewayVoiceStateUpdate;
     [Dispatch.WebhooksUpdate]: GatewayWebhooksUpdateDispatch;
+    [Dispatch.AutoModerationActionExecution]: GatewayAutoModerationActionExecutionDispatch;
+    [Dispatch.AutoModerationRuleCreate]: GatewayAutoModerationRuleCreateDispatch;
+    [Dispatch.AutoModerationRuleDelete]: GatewayAutoModerationRuleDeleteDispatch;
+    [Dispatch.AutoModerationRuleUpdate]: GatewayAutoModerationRuleUpdateDispatch;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
