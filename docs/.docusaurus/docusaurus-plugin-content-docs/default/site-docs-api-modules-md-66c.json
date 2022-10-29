@@ -1,0 +1,31 @@
+{
+  "unversionedId": "API/modules",
+  "id": "API/modules",
+  "title": "@slythejs/core",
+  "description": "Classes",
+  "source": "@site/docs/API/modules.md",
+  "sourceDirName": "API",
+  "slug": "/API/modules",
+  "permalink": "/docs/API/modules",
+  "draft": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0.5,
+  "frontMatter": {
+    "id": "modules",
+    "title": "@slythejs/core",
+    "sidebar_label": "Exports",
+    "sidebar_position": 0.5,
+    "custom_edit_url": null
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Readme",
+    "permalink": "/docs/API/"
+  },
+  "next": {
+    "title": "Client",
+    "permalink": "/docs/API/classes/Client"
+  }
+}

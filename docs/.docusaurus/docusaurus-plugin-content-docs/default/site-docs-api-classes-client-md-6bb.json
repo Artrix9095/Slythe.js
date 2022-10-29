@@ -1,0 +1,31 @@
+{
+  "unversionedId": "API/classes/Client",
+  "id": "API/classes/Client",
+  "title": "Class: Client",
+  "description": "Hierarchy",
+  "source": "@site/docs/API/classes/Client.md",
+  "sourceDirName": "API/classes",
+  "slug": "/API/classes/Client",
+  "permalink": "/docs/API/classes/Client",
+  "draft": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "id": "Client",
+    "title": "Class: Client",
+    "sidebar_label": "Client",
+    "sidebar_position": 0,
+    "custom_edit_url": null
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Exports",
+    "permalink": "/docs/API/modules"
+  },
+  "next": {
+    "title": "ClientConfig",
+    "permalink": "/docs/API/interfaces/ClientConfig"
+  }
+}
