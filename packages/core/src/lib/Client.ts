@@ -6,6 +6,7 @@ import { InteractionResponseType, InteractionType, Routes } from 'discord-api-ty
 import { GET } from '../util/http';
 import { Channel } from './structures/Channel';
 import { LevelWithSilent } from 'pino';
+import { Guild } from './structures/Guild';
 
 export interface ClientConfig {
     token?: string;
@@ -84,7 +85,7 @@ export class Client extends GatewayHandler {
         return GET(Routes.channel(id)).then(data => Channel.init(data));
     }
     public getGuild(id: string) {
-        return GET(Routes.guild(id));
+        return GET(Routes.guild(id)).then(data => new Guild(data));
     }
     /**
      * Kills the bot and host
