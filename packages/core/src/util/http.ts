@@ -66,7 +66,6 @@ const responseMiddleware = (data: { url: string; method: string; opts: any }) =>
 };
 
 const serializeJSONMiddleware = (res: APIResponse) => res.json();
-//TODO: fix DRY code
 
 export const REQUEST = (
     url: string,
