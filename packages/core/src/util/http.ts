@@ -7,6 +7,7 @@ import fetch, { Response } from 'node-fetch';
 type RequestOptions = {
     body?: any;
     headers?: any;
+    serializeJson?: boolean;
 };
 // https://discord.com/developers/docs/reference#user-agent
 const USER_AGENT = `Slythe.js (${global.LIB_VERSION}, https://github.com/Artrix9095/Slythe.js)`;
@@ -64,6 +65,7 @@ const responseMiddleware = (data: { url: string; method: string; opts: any }) =>
     return (res: Response): APIResponse => Object.assign(res, { __base: data });
 };
 
+const serializeJSONMiddleware = (res: APIResponse) => res.json();
 //TODO: fix DRY code
 
 export const REQUEST = (
@@ -92,7 +94,8 @@ export const REQUEST = (
     })
         .then(responseMiddleware({ url, method, opts }))
         .then(loggerMiddleware)
-        .then(errorMiddleware);
+        .then(errorMiddleware)
+        .then(opts.serializeJson ?? true ? serializeJSONMiddleware : undefined);
 };
 
 export const GET = (url: string, opts: Partial<RequestOptions> = {}) =>

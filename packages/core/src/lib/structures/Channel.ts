@@ -1,29 +1,43 @@
-import { APIChannel, Routes } from 'discord-api-types/v10';
-import { POST } from '../../util/http';
-import BaseStructure from './base';
+import {
+    APIChannel,
+    APIGuildChannel,
+    ChannelType,
+    Routes,
+    Snowflake,
+} from 'discord-api-types/v10';
+import { GET, POST } from '../../util/http';
+export class Channel {
+    constructor(protected __data: APIChannel) {}
 
-export class Channel extends BaseStructure<Channel, APIChannel> {
-    public get id() {
+    public get id(): Snowflake {
         return this.__data.id;
     }
+
 
     public get name() {
         return this.__data.name ?? null;
     }
 
-    /**
-     *
-     * @internal
-     */
-    init() {
-        return new TextChannel(this.__data); // TODO make a switch statement that will determine what kind of channel it is
+    send(content: any): any {
+        return POST(Routes.channelMessages(this.id), { body: content });
+    }
+
+    static init(data: APIChannel): Channel {
+        switch (data.type) {
+            case ChannelType.GuildText:
+                return new TextChannel(data);
+            default:
+                return new Channel(data);
+        }
     }
 }
 
 export class TextChannel extends Channel {
-    send(content: any): any {
-        return POST(Routes.channelMessages(this.id), { body: content }).then(res =>
-            res.json()
-        );
+    constructor(protected __data: APIGuildChannel<ChannelType.GuildText>) {
+        super(__data);
+    }
+
+    getGuild() {
+        return GET(Routes.guild(this.__data.guild_id!));
     }
 }

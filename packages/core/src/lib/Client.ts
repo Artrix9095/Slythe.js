@@ -81,12 +81,10 @@ export class Client extends GatewayHandler {
      * @param id Id of the channel
      */
     public getChannel(id: string) {
-        return GET(Routes.channel(id))
-            .then(res => res.json())
-            .then(data => new Channel(data as any).init());
+        return GET(Routes.channel(id)).then(data => Channel.init(data));
     }
     public getGuild(id: string) {
-        return GET(Routes.guild(id)).then(res => res.json());
+        return GET(Routes.guild(id));
     }
     /**
      * Kills the bot and host
