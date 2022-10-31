@@ -22,9 +22,9 @@ describe('Bot tests', () => {
 
     test('Bot can send messages', async () => {
         const channel = await client.getChannel(process.env.TEST_BOT_CHANNEL_ID!);
-
+        const content = 'Hello, World!';
         const message = await channel.send({
-            content: 'Hello, World!',
+            content,
             tts: false,
             embeds: [
                 {
@@ -33,9 +33,8 @@ describe('Bot tests', () => {
                 },
             ],
         });
-        console.log(message);
-
         expect(message).toBeTruthy();
+        expect(message.content).toEqual(content);
     });
 
     test('Bot can get guild', async () => {
