@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "discord-api-types": "latest",
-    "discord-interactions": "3.2.0",
-    "fastify": "4.8.1",
     "node-fetch": "^2.6.7",
     "pino": "8.6.0",
     "pino-pretty": "9.1.0",
