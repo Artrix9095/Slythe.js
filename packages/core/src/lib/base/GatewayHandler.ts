@@ -77,6 +77,7 @@ import { joinIntents } from '../../util/gateway';
 import { EventEmitterWithLogger } from './Logger';
 import { snakeToPascal } from '../../util/string';
 import { LevelWithSilent } from 'pino';
+import { pack, unpack } from '../../util/pack';
 
 type GatewayDispatchEventsBinder = {
     // Channels
@@ -188,7 +189,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
      */
     protected _sendEvent(e: Dispatch, d?: any) {
         this.ws?.send(
-            JSON.stringify({
+            pack({
                 op: GatewayOpcodes.Dispatch,
                 t: e,
                 d,
@@ -200,7 +201,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
      */
     protected _sendOp(op: GatewayOpcodes, d?: any) {
         this.ws?.send(
-            JSON.stringify({
+            pack({
                 op,
                 t: null,
                 d,
@@ -332,7 +333,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         this.ws.on('open', () => {
             if (isReconnecting) this._reconnect();
 
-            this.ws?.on('message', d => this.handleMessage(JSON.parse(d.toString())));
+            this.ws?.on('message', d => this.handleMessage(unpack(d)));
         });
     }
     /**

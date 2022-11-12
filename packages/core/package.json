@@ -27,5 +27,8 @@
     "@types/ws": "^8.5.3",
     "dotenv": "16.0.2",
     "ts-node": "10.9.1"
+  },
+  "optionalDependencies": {
+    "erlpack": "latest"
   }
 }
