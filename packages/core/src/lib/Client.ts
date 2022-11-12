@@ -21,7 +21,13 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 
 export class Client extends GatewayHandler {
     public bot: DAPI.APIUser | null = null;
+    /**
+     * @internal
+     */
     protected publicKey = '';
+    /**
+     * @internal
+     */
     protected clientId = '';
     constructor(config: ClientConfig) {
         super(config.intents, config.token, config.loggerLevel);
@@ -36,6 +42,9 @@ export class Client extends GatewayHandler {
             }
         }
     }
+    /**
+     * @internal
+     */
     protected override _onReady({ d: data }: DAPI.GatewayReadyDispatch) {
         this.isReady = true;
         this.bot = data.user;

@@ -4,6 +4,9 @@
 
 import EventEmitter from 'events';
 
+/**
+ * @internal
+ */
 export default class TypedEmitter<
     T extends { [key: string | symbol]: any[] }
 > extends EventEmitter {

@@ -160,7 +160,13 @@ export default class GatewayHandler extends EventEmitterWithLogger<
     } & { rawMSG: [GatewayDispatchPayload] }
 > {
     public isReady = false;
+    /**
+     * @internal
+     */
     public session: { seq?: number; id?: string; reconnectUrl?: string } = {};
+    /**
+     * @internal
+     */
     protected ws?: WebSocket;
     private heartBeatIntervalId: NodeJS.Timer | null = null;
     constructor(
@@ -171,11 +177,15 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         super(logLevel);
         global.logger = this.logger;
     }
-
+    /**
+     * @internal
+     */
     protected _heartbeat() {
         this._sendOp(GatewayOpcodes.HeartbeatAck);
     }
-
+    /**
+     * @internal
+     */
     protected _sendEvent(e: Dispatch, d?: any) {
         this.ws?.send(
             JSON.stringify({
@@ -185,6 +195,9 @@ export default class GatewayHandler extends EventEmitterWithLogger<
             })
         );
     }
+    /**
+     * @internal
+     */
     protected _sendOp(op: GatewayOpcodes, d?: any) {
         this.ws?.send(
             JSON.stringify({
@@ -194,10 +207,16 @@ export default class GatewayHandler extends EventEmitterWithLogger<
             })
         );
     }
+    /**
+     * @internal
+     */
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     protected _onReady(ready: GatewayReadyDispatch) {
         throw new Error('Implement this');
     }
+    /**
+     * @internal
+     */
     protected _identify() {
         this.logger.debug('Sending Identify');
         this._sendOp(GatewayOpcodes.Identify, {
@@ -210,6 +229,9 @@ export default class GatewayHandler extends EventEmitterWithLogger<
             },
         } as GatewayIdentifyData);
     }
+    /**
+     * @internal
+     */
     protected handleMessage(data: GatewayDispatchPayload & { d: any }) {
         // https://discord.com/developers/docs/topics/gateway#resuming
         if (data.s) this.session.seq = data.s;
@@ -259,6 +281,9 @@ export default class GatewayHandler extends EventEmitterWithLogger<
             }
         }
     }
+    /**
+     * @internal
+     */
     protected _reconnect() {
         this._sendOp(GatewayOpcodes.Resume, {
             token: this.token,
@@ -270,7 +295,7 @@ export default class GatewayHandler extends EventEmitterWithLogger<
      * Connect to discord's websocket server
      * TODO: add etf encoding https://discord.com/developers/docs/topics/gateway#etfjson
      */
-    connect(token?: string) {
+    public connect(token?: string) {
         if (!token && !this.token) {
             throw new Error('No Token provided');
         }

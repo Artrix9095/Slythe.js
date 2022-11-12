@@ -14,7 +14,9 @@ export default class Logger {
         },
     });
 }
-
+/**
+ * @internal
+ */
 export class EventEmitterWithLogger<
     T extends { [key: string]: any[] }
 > extends TypedEventEmitter<T> {

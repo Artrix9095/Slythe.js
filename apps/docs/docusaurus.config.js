@@ -28,8 +28,10 @@ const config = {
       {
         entryPointStrategy: 'packages',
         excludeExternals: true,
-        entryPoints,
+        excludeProtected: true,
+        excludeInternal: true,
         excludePrivate: true,
+        entryPoints,
       },
     ],
   ],

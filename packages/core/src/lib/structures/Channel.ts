@@ -8,6 +8,9 @@ import {
 import { DELETE, GET, POST } from '../../util/http';
 
 export class Channel {
+    /**
+     * @internal
+     */
     constructor(protected __data: APIChannel) {}
 
     public get id(): Snowflake {
@@ -36,7 +39,9 @@ export class Channel {
     static create(data: Omit<APIChannel, 'id'>) {
         return data;
     }
-
+    /**
+     * @internal
+     */
     static init(data: APIChannel): Channel {
         switch (data.type) {
             case ChannelType.GuildText:
@@ -48,6 +53,9 @@ export class Channel {
 }
 
 export class TextChannel extends Channel {
+    /**
+     * @internal
+     */
     constructor(protected __data: APIGuildChannel<ChannelType.GuildText>) {
         super(__data);
     }

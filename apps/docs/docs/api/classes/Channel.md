@@ -12,32 +12,6 @@ custom_edit_url: null
 
   ↳ [`TextChannel`](TextChannel.md)
 
-## Constructors
-
-### constructor
-
-• **new Channel**(`__data`)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `__data` | `APIChannel` |
-
-#### Defined in
-
-[lib/structures/Channel.ts:11](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L11)
-
-## Properties
-
-### \_\_data
-
-• `Protected` **\_\_data**: `APIChannel`
-
-#### Defined in
-
-[lib/structures/Channel.ts:11](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L11)
-
 ## Accessors
 
 ### id
@@ -50,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/structures/Channel.ts:13](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L13)
+[lib/structures/Channel.ts:16](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L16)
 
 ___
 
@@ -64,7 +38,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:17](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L17)
+[lib/structures/Channel.ts:20](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L20)
 
 ## Methods
 
@@ -78,7 +52,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:21](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L21)
+[lib/structures/Channel.ts:24](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L24)
 
 ___
 
@@ -98,7 +72,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:25](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L25)
+[lib/structures/Channel.ts:28](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L28)
 
 ___
 
@@ -112,7 +86,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:32](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L32)
+[lib/structures/Channel.ts:35](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L35)
 
 ___
 
@@ -126,7 +100,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:29](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L29)
+[lib/structures/Channel.ts:32](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L32)
 
 ___
 
@@ -146,24 +120,4 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:36](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L36)
-
-___
-
-### init
-
-▸ `Static` **init**(`data`): [`Channel`](Channel.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `data` | `APIChannel` |
-
-#### Returns
-
-[`Channel`](Channel.md)
-
-#### Defined in
-
-[lib/structures/Channel.ts:40](https://github.com/Artrix9095/Slythe.js/blob/1b3319e/packages/core/src/lib/structures/Channel.ts#L40)
+[lib/structures/Channel.ts:39](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/structures/Channel.ts#L39)
