@@ -30,7 +30,7 @@ GatewayHandler.constructor
 
 #### Defined in
 
-[lib/Client.ts:32](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/Client.ts#L32)
+[lib/Client.ts:32](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L32)
 
 ## Properties
 
@@ -40,7 +40,7 @@ GatewayHandler.constructor
 
 #### Defined in
 
-[lib/Client.ts:23](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/Client.ts#L23)
+[lib/Client.ts:23](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L23)
 
 ___
 
@@ -54,7 +54,7 @@ GatewayHandler.intents
 
 #### Defined in
 
-[lib/base/GatewayHandler.ts:173](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/GatewayHandler.ts#L173)
+[lib/base/GatewayHandler.ts:173](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/GatewayHandler.ts#L173)
 
 ___
 
@@ -68,7 +68,7 @@ GatewayHandler.isReady
 
 #### Defined in
 
-[lib/base/GatewayHandler.ts:162](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/GatewayHandler.ts#L162)
+[lib/base/GatewayHandler.ts:162](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/GatewayHandler.ts#L162)
 
 ___
 
@@ -82,7 +82,7 @@ GatewayHandler.logger
 
 #### Defined in
 
-[lib/base/Logger.ts:23](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/Logger.ts#L23)
+[lib/base/Logger.ts:23](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/Logger.ts#L23)
 
 ## Methods
 
@@ -109,7 +109,7 @@ GatewayHandler.connect
 
 #### Defined in
 
-[lib/base/GatewayHandler.ts:298](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/GatewayHandler.ts#L298)
+[lib/base/GatewayHandler.ts:298](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/GatewayHandler.ts#L298)
 
 ___
 
@@ -130,7 +130,7 @@ GatewayHandler.disconnect
 
 #### Defined in
 
-[lib/base/GatewayHandler.ts:342](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/GatewayHandler.ts#L342)
+[lib/base/GatewayHandler.ts:342](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/GatewayHandler.ts#L342)
 
 ___
 
@@ -161,7 +161,7 @@ GatewayHandler.emit
 
 #### Defined in
 
-[lib/base/EventEmitter.ts:21](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/EventEmitter.ts#L21)
+[lib/base/EventEmitter.ts:21](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/EventEmitter.ts#L21)
 
 ___
 
@@ -181,7 +181,7 @@ ___
 
 #### Defined in
 
-[lib/Client.ts:58](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/Client.ts#L58)
+[lib/Client.ts:58](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L58)
 
 ___
 
@@ -201,7 +201,7 @@ ___
 
 #### Defined in
 
-[lib/Client.ts:61](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/Client.ts#L61)
+[lib/Client.ts:61](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L61)
 
 ___
 
@@ -217,7 +217,7 @@ Kills the bot
 
 #### Defined in
 
-[lib/Client.ts:67](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/Client.ts#L67)
+[lib/Client.ts:67](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L67)
 
 ___
 
@@ -248,4 +248,4 @@ GatewayHandler.on
 
 #### Defined in
 
-[lib/base/EventEmitter.ts:17](https://github.com/Artrix9095/Slythe.js/blob/e85ec14/packages/core/src/lib/base/EventEmitter.ts#L17)
+[lib/base/EventEmitter.ts:17](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/base/EventEmitter.ts#L17)
