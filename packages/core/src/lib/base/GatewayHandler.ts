@@ -77,7 +77,7 @@ import { joinIntents } from '../../util/gateway';
 import { EventEmitterWithLogger } from './Logger';
 import { snakeToPascal } from '../../util/string';
 import { LevelWithSilent } from 'pino';
-import { pack, unpack } from '../../util/pack';
+import { encoding, pack, unpack } from '../../util/pack';
 
 type GatewayDispatchEventsBinder = {
     // Channels
@@ -311,7 +311,9 @@ export default class GatewayHandler extends EventEmitterWithLogger<
         const gatewayUrl = isReconnecting
             ? this.session.reconnectUrl
             : 'wss://gateway.discord.gg/';
-        this.ws = new WebSocket(gatewayUrl + `?v=${DAPI.GatewayVersion}&encoding=json`); //TODO: support erlpack etc
+        this.ws = new WebSocket(
+            gatewayUrl + `?v=${DAPI.GatewayVersion}&encoding=${encoding}`
+        ); //TODO: support erlpack etc
 
         this.ws.on('error', (code?: GatewayCloseCodes, reason?: Buffer) => {
             if (!code && this.isReady) {
