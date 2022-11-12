@@ -1,0 +1,10 @@
+{
+  "name": "core",
+
+  "typedoc": {
+    "entryPoint": "./src/index.ts",
+    "readmeFile": "./README.md",
+    "displayName": "Slythejs Core",
+    "tsconfig": "./tsconfig.json"
+  }
+}

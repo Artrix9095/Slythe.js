@@ -1,3 +1,11 @@
+---
+id: "index"
+title: "slythe.js"
+sidebar_label: "Readme"
+sidebar_position: 0
+custom_edit_url: null
+---
+
 <div align="center">
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="/assets/logo3-polygon.svg" />

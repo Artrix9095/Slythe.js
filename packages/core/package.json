@@ -5,7 +5,8 @@
   "author": "Artrix <39530102+Artrix9095@users.noreply.github.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "./dist/index.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
