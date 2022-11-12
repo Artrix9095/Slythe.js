@@ -22,4 +22,7 @@ export class Guild {
     async unbanMember(id: Snowflake) {
         await DELETE(Routes.guildBan(this.id, id), { serializeJson: false });
     }
+    async leave() {
+        await DELETE(Routes.userGuild(this.id), { serializeJson: false });
+    }
 }
