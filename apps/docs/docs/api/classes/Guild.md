@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/structures/Guild.ts:6](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/structures/Guild.ts#L6)
+[lib/structures/Guild.ts:6](https://github.com/Artrix9095/Slythe.js/blob/14685bf/packages/core/src/lib/structures/Guild.ts#L6)
 
 ## Accessors
 
@@ -34,7 +34,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/structures/Guild.ts:7](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/structures/Guild.ts#L7)
+[lib/structures/Guild.ts:7](https://github.com/Artrix9095/Slythe.js/blob/14685bf/packages/core/src/lib/structures/Guild.ts#L7)
 
 ## Methods
 
@@ -54,7 +54,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/structures/Guild.ts:19](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/structures/Guild.ts#L19)
+[lib/structures/Guild.ts:19](https://github.com/Artrix9095/Slythe.js/blob/14685bf/packages/core/src/lib/structures/Guild.ts#L19)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Guild.ts:11](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/structures/Guild.ts#L11)
+[lib/structures/Guild.ts:11](https://github.com/Artrix9095/Slythe.js/blob/14685bf/packages/core/src/lib/structures/Guild.ts#L11)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Guild.ts:16](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/structures/Guild.ts#L16)
+[lib/structures/Guild.ts:16](https://github.com/Artrix9095/Slythe.js/blob/14685bf/packages/core/src/lib/structures/Guild.ts#L16)
 
 ___
 
@@ -114,4 +114,4 @@ ___
 
 #### Defined in
 
-[lib/structures/Guild.ts:22](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/structures/Guild.ts#L22)
+[lib/structures/Guild.ts:22](https://github.com/Artrix9095/Slythe.js/blob/14685bf/packages/core/src/lib/structures/Guild.ts#L22)
