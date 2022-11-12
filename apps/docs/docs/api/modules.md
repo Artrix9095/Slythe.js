@@ -12,6 +12,7 @@ custom_edit_url: null
 - [Client](classes/Client.md)
 - [Guild](classes/Guild.md)
 - [TextChannel](classes/TextChannel.md)
+- [User](classes/User.md)
 
 ## Interfaces
 
