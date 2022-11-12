@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/Client.ts:11](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L11)
+[lib/Client.ts:11](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/Client.ts#L11)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[lib/Client.ts:13](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L13)
+[lib/Client.ts:13](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/Client.ts#L13)
 
 ___
 
@@ -38,7 +38,7 @@ silent
 
 #### Defined in
 
-[lib/Client.ts:17](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L17)
+[lib/Client.ts:17](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/Client.ts#L17)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[lib/Client.ts:12](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L12)
+[lib/Client.ts:12](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/Client.ts#L12)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[lib/Client.ts:10](https://github.com/Artrix9095/Slythe.js/blob/baf0060/packages/core/src/lib/Client.ts#L10)
+[lib/Client.ts:10](https://github.com/Artrix9095/Slythe.js/blob/c7132bf/packages/core/src/lib/Client.ts#L10)
