@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-lib/structures/User.ts:11
+[lib/structures/User.ts:15](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L15)
 
 ## Accessors
 
@@ -34,7 +34,7 @@ lib/structures/User.ts:11
 
 #### Defined in
 
-lib/structures/User.ts:76
+[lib/structures/User.ts:89](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L89)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:64
+[lib/structures/User.ts:77](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L77)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:12
+[lib/structures/User.ts:16](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L16)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:15
+[lib/structures/User.ts:19](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L19)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:22
+[lib/structures/User.ts:26](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L26)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:72
+[lib/structures/User.ts:85](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L85)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:80
+[lib/structures/User.ts:93](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L93)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:19
+[lib/structures/User.ts:23](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L23)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:68
+[lib/structures/User.ts:81](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L81)
 
 ## Methods
 
@@ -177,7 +177,7 @@ The avatar URL
 
 #### Defined in
 
-lib/structures/User.ts:50
+[lib/structures/User.ts:54](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L54)
 
 ___
 
@@ -208,7 +208,25 @@ The banner URL
 
 #### Defined in
 
-lib/structures/User.ts:31
+[lib/structures/User.ts:35](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L35)
+
+___
+
+### createDM
+
+▸ **createDM**(): `Promise`<[`Channel`](Channel.md)\>
+
+Creates a DM with a user
+
+#### Returns
+
+`Promise`<[`Channel`](Channel.md)\>
+
+A DM channel
+
+#### Defined in
+
+[lib/structures/User.ts:71](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L71)
 
 ___
 
@@ -222,7 +240,7 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:87
+[lib/structures/User.ts:100](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L100)
 
 ___
 
@@ -236,4 +254,4 @@ ___
 
 #### Defined in
 
-lib/structures/User.ts:83
+[lib/structures/User.ts:96](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/User.ts#L96)

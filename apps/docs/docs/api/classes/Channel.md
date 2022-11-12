@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/structures/Channel.ts:16](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L16)
+[lib/structures/Channel.ts:16](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L16)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:20](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L20)
+[lib/structures/Channel.ts:20](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L20)
 
 ## Methods
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:24](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L24)
+[lib/structures/Channel.ts:24](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L24)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:28](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L28)
+[lib/structures/Channel.ts:28](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L28)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:35](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L35)
+[lib/structures/Channel.ts:35](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L35)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:32](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L32)
+[lib/structures/Channel.ts:32](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L32)
 
 ___
 
@@ -120,4 +120,4 @@ ___
 
 #### Defined in
 
-[lib/structures/Channel.ts:39](https://github.com/Artrix9095/Slythe.js/blob/9d0ce5c/packages/core/src/lib/structures/Channel.ts#L39)
+[lib/structures/Channel.ts:39](https://github.com/Artrix9095/Slythe.js/blob/3381088/packages/core/src/lib/structures/Channel.ts#L39)
