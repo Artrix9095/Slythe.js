@@ -3,10 +3,15 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { npm2yarn2pnpm } = require('@sapphire/docusaurus-plugin-npm2yarn2pnpm');
+const { ts2esm2cjs } = require('@sapphire/docusaurus-plugin-ts2esm2cjs');
+
 const path = require('path');
 const { readdirSync } = require('fs');
 
 const PACKAGES_DIR = path.join(__dirname, '../../packages');
+
+const GITHUB_REPO = `https://github.com/Artrix9095/Slythe.js`;
 
 const packages = readdirSync(PACKAGES_DIR);
 
@@ -53,14 +58,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: `${GITHUB_REPO}/tree/main/apps/docs/docs/`,
+
+          remarkPlugins: [npm2yarn2pnpm, ts2esm2cjs],
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -73,10 +75,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Slythe.js',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'assets/logo2.svg',
         },
         items: [
           {
@@ -86,7 +88,7 @@ const config = {
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: GITHUB_REPO,
             label: 'GitHub',
             position: 'right',
           },
@@ -107,18 +109,18 @@ const config = {
           {
             title: 'Community',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+              // {
+              //   label: 'Stack Overflow',
+              //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              // },
+              // {
+              //   label: 'Discord',
+              //   href: 'https://discordapp.com/invite/docusaurus',
+              // },
+              // {
+              //   label: 'Twitter',
+              //   href: 'https://twitter.com/docusaurus',
+              // },
             ],
           },
           {
@@ -126,7 +128,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: GITHUB_REPO,
               },
             ],
           },

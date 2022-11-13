@@ -1,6 +1,7 @@
 ---
 id: 'Prerequisites'
 title: 'Prerequisites'
+sidebar_position: 1
 ---
 
 # Getting started
