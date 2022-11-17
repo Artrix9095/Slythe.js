@@ -73,6 +73,7 @@ importers:
       chalk: ^5.0.1
       chalk-animation: ^2.0.3
       commander: ^9.4.0
+      dotenv: 16.0.3
       figlet: ^1.5.2
       gradient-string: ^2.0.2
       inquirer: ^9.1.2
@@ -86,6 +87,7 @@ importers:
       chalk: 5.0.1
       chalk-animation: 2.0.3
       commander: 9.4.0
+      dotenv: 16.0.3
       figlet: 1.5.2
       gradient-string: 2.0.2
       inquirer: 9.1.2
@@ -114,7 +116,7 @@ importers:
       ts-node: 10.9.1
       ws: ^8.10.0
     dependencies:
-      discord-api-types: 0.37.17
+      discord-api-types: 0.37.18
       node-fetch: 2.6.7
       pino: 8.6.0
       pino-pretty: 9.1.0
@@ -6738,8 +6740,8 @@ packages:
     dependencies:
       path-type: 4.0.0
 
-  /discord-api-types/0.37.17:
-    resolution: {integrity: sha512-5ZIw1VtkmToBy8ziketjHkZnW1FoLevyXdK/TslNFLozijug2RnB3MyBNtSGzML1c72koU3neeGkvFZ8OiU0tQ==}
+  /discord-api-types/0.37.18:
+    resolution: {integrity: sha512-mJ+9C8gmG5csssVZPH06Y8IGiJykljFyZc6n6F+T3vKo6yNBI5TtLIbwt6t9hJzsR5f1ITzRZ6cuPrTvRCUxqA==}
     dev: false
 
   /dns-equal/1.0.0:
@@ -6855,6 +6857,11 @@ packages:
     resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
     engines: {node: '>=12'}
     dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /duplexer/0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
