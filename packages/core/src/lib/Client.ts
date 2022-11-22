@@ -5,6 +5,7 @@ import { GET } from '../util/http';
 import { Channel } from './structures/Channel';
 import { LevelWithSilent } from 'pino';
 import { Guild } from './structures/Guild';
+import { ApplicationCommand } from './Command';
 
 export interface ClientConfig {
     token?: string;
@@ -49,7 +50,7 @@ export class Client extends GatewayHandler {
         this.isReady = true;
         this.bot = data.user;
 
-        this.clientId = data.user.id;
+        global.clientId = this.clientId = data.user.id;
     }
     /**
      *
@@ -61,6 +62,9 @@ export class Client extends GatewayHandler {
     public getGuild(id: string) {
         return GET(Routes.guild(id)).then(data => new Guild(data));
     }
+    // TODO: create a callback and storage system for slash commands
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+    public registerCommand(cmd: ApplicationCommand) {}
     /**
      * Kills the bot
      */

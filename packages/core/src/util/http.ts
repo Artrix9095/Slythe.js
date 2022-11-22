@@ -54,8 +54,14 @@ export const errorMiddleware = async (res: APIResponse): Promise<APIResponse> =>
 
         return await REQUEST(res.__base.url, res.__base.method, res.__base.opts);
     } else if (res.status >= 400) {
-        const error = await res.json();
-        throw new Error(error.message);
+        let message = '';
+        try {
+            const error = await res.json();
+            message = error.message;
+        } catch (e: any) {
+            message = e.toString();
+        }
+        throw new Error(message);
     } else {
         return res;
     }

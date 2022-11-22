@@ -1,4 +1,4 @@
-import { Client } from '../';
+import { Client, SlashCommand } from '../';
 import 'dotenv/config';
 
 describe('Bot tests', () => {
@@ -45,5 +45,15 @@ describe('Bot tests', () => {
 
     afterAll(done => {
         client.kill().then(() => done());
+    });
+
+    test('Bot Can create slash command', async () => {
+        const cmd = await new SlashCommand({
+            name: 'testcommand1',
+            description: 'testcommand',
+            guild: process.env.TEST_BOT_GUILD_ID,
+        }).construct();
+        console.log(cmd);
+        expect(cmd).toBeTruthy();
     });
 });
