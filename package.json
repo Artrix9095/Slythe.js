@@ -28,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "eslint": "^8.23.1",
+    "gitmoji-cli": "7.0.2",
     "jest": "29.0.3",
     "lerna": "^5.5.1",
     "pnpm": "^7.12.0",
