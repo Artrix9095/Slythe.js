@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "lerna run dev --stream --parallel",
     "lerna": "lerna",
-    "test": "turbo run test",
-    "lint": "turbo run lint",
+    "test": "turbo run test --filter=./packages/**/*",
+    "lint": "turbo run lint --filter=./packages/**/*",
     "build": "turbo run build --filter=./packages/**/*",
     "prepublish": "lerna run prepublish",
     "publish-canary": "lerna version prerelease --preid alpha --force-publish",
