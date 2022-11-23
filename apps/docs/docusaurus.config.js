@@ -1,4 +1,3 @@
-// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
@@ -40,15 +39,15 @@ const config = {
       },
     ],
   ],
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Slythe.js',
+  tagline: 'The better way to make discord bots',
+  url: 'https://slythe.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Artrix9095', // Usually your GitHub org/user name.
+  projectName: 'slythejs', // Usually your repo name.
 
   presets: [
     [
@@ -77,7 +76,7 @@ const config = {
       navbar: {
         title: 'Slythe.js',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Slythe Logo',
           src: 'assets/logo2.svg',
         },
         items: [
@@ -138,6 +137,10 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: true,
       },
     }),
 };
