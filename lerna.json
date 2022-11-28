@@ -1,20 +1,17 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "npmClient": "pnpm",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
+  "ignore": "docs",
   "useWorkspaces": true,
+  "message": "🔖 (*) Release",
   "command": {
     "version": {
       "exact": true
     },
     "publish": {
       "npmClient": "npm",
-      "allowBranch": [
-        "main",
-        "canary"
-      ],
+      "allowBranch": ["main", "canary"],
       "registry": "https://registry.npmjs.org/"
     }
   },
