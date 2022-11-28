@@ -31,7 +31,6 @@ Select a gitmoji that best describes what you did in your commit. Select one of 
 - [packages/cli](../packages/cli) - Anything changes the cli package
 - [apps/docs](../apps/docs) - Anything that changes the docs
 - [root](../) - Anything that changes the root directory _(package.json, CONTRIBUTING.md, .eslint.js, etc)_
+- [\*](../) - Anything that may apply to **all** packages, this isn't recommended, if you're commit applies to all packages more than likely it can be split up into multiple commits
 
 And then add a title for your commit that is **under** 48 characters, if you need something longer, try making the title vague and explaining what you did in depth in the description field that comes next
-
-
