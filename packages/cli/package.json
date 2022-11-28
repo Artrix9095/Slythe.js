@@ -12,7 +12,8 @@
   },
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write --config ../../.prettierrc ."
   },
   "dependencies": {
     "@swc/core": "1.3.1",

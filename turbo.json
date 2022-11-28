@@ -24,6 +24,11 @@
       // either a `.tsx` or `.ts` file has changed in `src` or `test` folders.
       "inputs": ["src/**/*.ts", "tests/**/*.ts"]
     },
+    "format": {
+      "dependsOn": ["lint"],
+      "outputs": [],
+      "inputs": ["src/**/*.ts", "tests/**/*.ts"]
+    },
     "lint": {
       // A package's `lint` script has no dependencies and
       // can be run whenever. It also has no filesystem outputs.

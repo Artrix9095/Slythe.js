@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "format": "prettier --write --config ../../.prettierrc ."
   },
   "dependencies": {
     "discord-api-types": "latest",
